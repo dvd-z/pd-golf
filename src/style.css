@@ -1,23 +1,23 @@
 h1 {
-	font-family: 'Lobster', cursive;
-	font-size: 85px;
+    font-family: 'Lobster', cursive;
+    font-size: 85px;
 }
 
 .form-group {
-	margin: 0 10px;
+    margin: 0 10px;
 }
 
 .list-group-item, .submit-container, .grade-input-container {
-	width: 100%;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .grade-input {
-	width: 100px;
+    width: 100px;
 }
 
 .calculate-button {
-	margin: 30px 10px 0 10px;
+    margin: 30px 10px 0 10px;
 }

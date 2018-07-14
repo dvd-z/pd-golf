@@ -5,11 +5,15 @@
 <head>
     <meta charset="UTF-8">
     <title>PD Golf</title>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
+    <script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
@@ -17,50 +21,39 @@
 <body>
     <h1 class="text-center">PD Golf</h1>
     <ul id="assignments" class="list-group">
-            <li class="list-group-item">
-                <form class="form-inline">
-                    <div class="form-group bmd-form-group">
-                        <input type="text" data-index=${i} class="form-control" id="name">
-                        <label for="name" class="bmd-label-static">Assignment Name</label>
-                    </div>
-                    <div class="form-group bmd-form-group">
-                        <input type="text" data-index=${i} class="form-control" id="weight">
-                        <label for="weight" class="bmd-label-static">Weight</label>
-                    </div>
-                    <div class="form-group bmd-form-group">
-                        <input type="text" data-index=${i} class="form-control" id="mark"> 
-                        <label for="mark" class="bmd-label-static">Mark</label>
-                    </div>
-                    <button type="button" class="close" aria-label="Close" id="delete">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </form>
-            </li>
+        <li class="list-group-item">
+            <form class="form-inline">
+                <div class="form-group bmd-form-group">
+                    <input type="text" data-index=${i} class="form-control" id="name">
+                    <label for="name" class="bmd-label-static">Assignment Name</label>
+                </div>
+                <div class="form-group bmd-form-group">
+                    <input type="text" data-index=${i} class="form-control" id="weight">
+                    <label for="weight" class="bmd-label-static">Weight</label>
+                </div>
+                <div class="form-group bmd-form-group">
+                    <input type="text" data-index=${i} class="form-control" id="mark">
+                    <label for="mark" class="bmd-label-static">Mark</label>
+                </div>
+                <button type="button" class="close" aria-label="Close" id="delete">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </form>
+        </li>
     </ul>
 
     <div class="submit-container">
-        <button
-            class="btn btn-primary add-button"
-            id="add"
-        >
+        <button class="btn btn-primary add-button" id="add">
             Add Assignment
         </button>
     </div>
     <div class="grade-input-container">
-        <input
-            type="number"
-            class="form-control grade-input"
-            id="final-grade"
-            placeholder="Final Grade"
-        />
-        <button
-            class="btn btn-primary calculate-button"
-            id="calculate"
-        >
+        <input type="number" class="form-control grade-input" id="final-grade" placeholder="Final Grade" />
+        <button class="btn btn-primary calculate-button" id="calculate">
             Calculate
         </button>
     </div>
-    <script src= "script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -37,7 +37,21 @@ function deleteItem(e) {
 }
 
 function calculateMarks() {
+    //const desiredMark = input value;
+    var totalWeightAchieved = 0, neededWeight = 0;
+    assignments.forEach(assignment => {
+        if (assignment.mark) {
+            totalWeightAchieved += (assignment.mark / 100) * assignment.weight;
+            neededWeight -= desiredMark - (assignment.mark / 100) * assignment.weight;
+            neededWeight /= 3;
+        }
+    });
 
+    assignments.forEach(assignment => {
+        if (!assignment.mark) {
+            assignment.mark = (neededWeight / weight) * 100;
+        }
+    });
 }
 
 function populateList(assignments = [], assignmentsList) {
@@ -62,7 +76,7 @@ function populateList(assignments = [], assignmentsList) {
                     </button>
                 </form>
             </li>
-        `;
+         `;
     }).join("");
 }
 
