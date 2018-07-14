@@ -45,17 +45,17 @@ function populateList(assignments = [], assignmentsList) {
         return `
             <li class="list-group-item">
                 <form class="form-inline">
-                    <div class="form-group">
+                    <div class="form-group bmd-form-group">
                         <input type="text" data-index=${i} class="form-control" id="name" value=${assignments[`${i}`].name}>
-                        <label for="name" class="bmd-label-floating">Assignment Name</label>
+                        <label for="name" class="bmd-label-static">Assignment Name</label>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group bmd-form-group">
                         <input type="text" data-index=${i} class="form-control" id="weight" value=${assignments[`${i}`].weight}>
-                        <label for="weight" class="bmd-label-floating">Weight</label>
+                        <label for="weight" class="bmd-label-static">Weight</label>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group bmd-form-group">
                         <input type="text" data-index=${i} class="form-control" id="mark" value=${assignments[`${i}`].mark}> 
-                        <label for="mark" class="bmd-label-floating">Mark</label>
+                        <label for="mark" class="bmd-label-static">Mark</label>
                     </div>
                     <button type="button" class="close" aria-label="Close" id="delete">
                         <span aria-hidden="true">&times;</span>
