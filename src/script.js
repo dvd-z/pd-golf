@@ -1,34 +1,34 @@
-const addItems = document.querySelector('.add-items');
-const itemsList = document.querySelector('.plates');
+const addAssignments = document.querySelector('#add');
+const assignmentsList = document.querySelector('#assignments');
 // const deleteButton = document.querySelector('#delete');
 // const checkButton = document.querySelector('#check');
 // const uncheckButton = document.querySelector('#uncheck');
-var items = JSON.parse(localStorage.getItem('items')) || [];
+var assignments = JSON.parse(localStorage.getItem('assignments')) || [];
 
-addItems.addEventListener('submit', addItem);
-itemsList.addEventListener('click', toggleDone);
+addAssignments.addEventListener('submit', addAssignment);
+assignmentsList.addEventListener('click', toggleDone);
 // deleteButton.addEventListener('click', deleteAll);
 // checkButton.addEventListener('click', checkAll);
 // uncheckButton.addEventListener('click', uncheckAll);
 
-function addItem(e) {
+function addAssignment(e) {
     e.preventDefault();
-    const item = {
-    text: (this.querySelector('[name=item]')).value,
+    const assignment = {
+    text: (this.querySelector('[name=assignment]')).value,
     done: false
     }
-    items.push(item);
-    populateList(items, itemsList);
-    localStorage.setItem('items', JSON.stringify(items));
+    assignments.push(assignment);
+    populateList(assignments, assignmentsList);
+    localStorage.setItem('assignments', JSON.stringify(assignments));
     this.reset();
 }
 
-function populateList(items = [], itemsList) {
-    itemsList.innerHTML = items.map((item, i) => {
+function populateList(assignments = [], assignmentsList) {
+    assignmentsList.innerHTML = assignments.map((assignment, i) => {
     return `
         <li>
-        <input type='checkbox' data-index=${i} id='item${i}' ${item.done ? 'checked' : ''}/>
-        <label for='item${i}'>${item.text}</label>
+        <input type='checkbox' data-index=${i} id='assignment${i}' ${assignment.done ? 'checked' : ''}/>
+        <label for='assignment${i}'>${assignment.text}</label>
         </li>
     `;
     }).join('');
@@ -39,27 +39,27 @@ function toggleDone(e) {
     return;
     }
     const index = e.target.dataset.index;
-    items[index].done = !items[index].done;
-    localStorage.setItem('items', JSON.stringify(items));
-    populateList(items, itemsList);
+    assignments[index].done = !assignments[index].done;
+    localStorage.setItem('assignments', JSON.stringify(assignments));
+    populateList(assignments, assignmentsList);
 }
 
 // function deleteAll() {
-//     items = [];
-//     populateList([], itemsList);
-//     localStorage.removeItem('items');
+//     assignments = [];
+//     populateList([], assignmentsList);
+//     localStorage.removeItem('assignments');
 // }
 
 // function checkAll() {
-//     items.forEach(item => item.done = true);
-//     populateList(items, itemsList);
-//     localStorage.setItem('items', JSON.stringify(items));
+//     assignments.forEach(assignment => assignment.done = true);
+//     populateList(assignments, assignmentsList);
+//     localStorage.setItem('assignments', JSON.stringify(assignments));
 // }
 
 // function uncheckAll() {
-//     items.forEach(item => item.done = false);
-//     populateList(items, itemsList);
-//     localStorage.setItem('items', JSON.stringify(items));
+//     assignments.forEach(assignment => assignment.done = false);
+//     populateList(assignments, assignmentsList);
+//     localStorage.setItem('assignments', JSON.stringify(assignments));
 // }
 
-populateList(items, itemsList);
+populateList(assignments, assignmentsList);
