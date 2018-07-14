@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>PD Golf</title>
+    <script src='script.js'></script>
+    <link rel='stylesheet' href='style.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+</head>
+
+<body>
+    <h1 class="jumbotron">PD Golf</h1>
+    <ul id="assignments">
+        <li>
+            <input type="text" id="name">
+            <input type="text" id="weight">
+            <input type="text" id="mark">
+            <button id="delete" class="foo-button mdc-button">X</button>
+        </li>
+    </ul>
+
+    <div>
+        <button id="add">+</button>
+        <p>Add Assignment</p>
+    </div>
+    <button id="calculate">Calculate</button>
+
+    <script type="text/javascript">mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));</script>
+</body>
+
+</html>
