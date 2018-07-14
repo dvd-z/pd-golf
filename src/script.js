@@ -28,7 +28,7 @@ function modifyItem(e) {
 }
 
 function deleteItem(e) {
-    if (!e.target.matches("input#delete")) {
+    if (!e.target.matches("button#delete")) {
         return;
     }
     assignments.splice(e.target.dataset.index, 1);
@@ -43,21 +43,23 @@ function calculateMarks() {
 function populateList(assignments = [], assignmentsList) {
     assignmentsList.innerHTML = assignments.map((assignment, i) => {
         return `
-            <li>
+            <li class="list-group-item">
                 <form class="form-inline">
                     <div class="form-group">
                         <input type="text" data-index=${i} class="form-control" id="name" value=${assignments[`${i}`].name}>
                         <label for="name" class="bmd-label-floating">Assignment Name</label>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <input type="text" data-index=${i} class="form-control" id="weight" value=${assignments[`${i}`].weight}>
                         <label for="weight" class="bmd-label-floating">Weight</label>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <input type="text" data-index=${i} class="form-control" id="mark" value=${assignments[`${i}`].mark}> 
                         <label for="mark" class="bmd-label-floating">Mark</label>
                     </div>
-                    <input type="submit" id="delete" data-index=${i} value="✕">
+                    <button type="button" class="close" aria-label="Close" id="delete">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </form>
             </li>
         `;
