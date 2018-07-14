@@ -20,15 +20,15 @@
             <input type="text" data-index=${i} id="name">
             <input type="text" data-index=${i} id="weight">
             <input type="text" data-index=${i} id="mark">
-            <button id="delete" data-index=${i} class="foo-button mdc-button">✕</button>
+            <input type="submit" id="delete" data-index=${i} class="foo-button mdc-button" value="✕">
         </li>
     </ul>
 
     <div>
-        <button id="add">+</button>
+        <input type="submit" id="add" value="+">
         <p>Add Assignment</p>
     </div>
-    <button id="calculate">Calculate</button>
+    <input type="submit" id="calculate" value="Calculate">
 
     <script type="text/javascript">mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));</script>
 </body>

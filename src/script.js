@@ -1,17 +1,15 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const addAssignments = document.querySelector('#add');
-    const assignmentsList = document.querySelector('#assignments');
-    var assignments = JSON.parse(localStorage.getItem('assignments')) || [];
+document.addEventListener("DOMContentLoaded", function () {
+    const addAssignments = document.querySelector("#add");
+    const assignmentsList = document.querySelector("#assignments");
+    var assignments = JSON.parse(localStorage.getItem("assignments")) || [];
 
-    addAssignments.addEventListener('click', addAssignment);
+    addAssignments.addEventListener("click", addAssignment);
 
     function addAssignment(e) {
-        e.preventDefault();
         const assignment = {};
         assignments.push(assignment);
         populateList(assignments, assignmentsList);
-        localStorage.setItem('assignments', JSON.stringify(assignments));
-        this.reset();
+        localStorage.setItem("assignments", JSON.stringify(assignments));
     }
 
     function populateList(assignments = [], assignmentsList) {
@@ -21,10 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 <input type="text" data-index=${i} id="name">
                 <input type="text" data-index=${i} id="weight">
                 <input type="text" data-index=${i} id="mark">
-                <button id="delete" data-index=${i} class="foo-button mdc-button">✕</button>
+                <input type="submit" id="delete" data-index=${i} class="foo-button mdc-button" value="✕">
             </li>
         `;
-        }).join('');
+        }).join("");
     }
 
     populateList(assignments, assignmentsList);
