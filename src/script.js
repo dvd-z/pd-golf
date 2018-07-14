@@ -20,7 +20,7 @@ function addAssignment() {
 }
 
 function modifyItem(e) {
-    if (!e.target.matches("input") || e.target.matches("input#delete")) {
+    if (!e.target.matches("input") || e.target.matches("button#delete")) {
         return;
     }
     assignments[e.target.dataset.index][e.target.id] = e.target.value;
@@ -28,7 +28,7 @@ function modifyItem(e) {
 }
 
 function deleteItem(e) {
-    if (!e.target.matches("button#delete")) {
+    if (e.target.id !== "delete-button") {
         return;
     }
     assignments.splice(e.target.dataset.index, 1);
@@ -57,8 +57,8 @@ function populateList(assignments = [], assignmentsList) {
                         <input type="text" data-index=${i} class="form-control" id="mark" value=${assignments[`${i}`].mark}> 
                         <label for="mark" class="bmd-label-static">Mark</label>
                     </div>
-                    <button type="button" class="close" aria-label="Close" id="delete">
-                        <span aria-hidden="true">&times;</span>
+                    <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true" id="delete-button">&times;</span>
                     </button>
                 </form>
             </li>
