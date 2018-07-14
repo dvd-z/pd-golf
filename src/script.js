@@ -27,8 +27,10 @@ function populateList(assignments = [], assignmentsList) {
     assignmentsList.innerHTML = assignments.map((assignment, i) => {
     return `
         <li>
-        <input type='checkbox' data-index=${i} id='assignment${i}' ${assignment.done ? 'checked' : ''}/>
-        <label for='assignment${i}'>${assignment.text}</label>
+            <input type="text" data-index=${i} id="name">
+            <input type="text" data-index=${i} id="weight">
+            <input type="text" data-index=${i} id="mark">
+            <button id="delete" data-index=${i} class="foo-button mdc-button">✕</button>
         </li>
     `;
     }).join('');
