@@ -1,15 +1,9 @@
 const addAssignments = document.querySelector('#add');
 const assignmentsList = document.querySelector('#assignments');
-// const deleteButton = document.querySelector('#delete');
-// const checkButton = document.querySelector('#check');
-// const uncheckButton = document.querySelector('#uncheck');
 var assignments = JSON.parse(localStorage.getItem('assignments')) || [];
 
 addAssignments.addEventListener('submit', addAssignment);
 assignmentsList.addEventListener('click', toggleDone);
-// deleteButton.addEventListener('click', deleteAll);
-// checkButton.addEventListener('click', checkAll);
-// uncheckButton.addEventListener('click', uncheckAll);
 
 function addAssignment(e) {
     e.preventDefault();
@@ -45,23 +39,5 @@ function toggleDone(e) {
     localStorage.setItem('assignments', JSON.stringify(assignments));
     populateList(assignments, assignmentsList);
 }
-
-// function deleteAll() {
-//     assignments = [];
-//     populateList([], assignmentsList);
-//     localStorage.removeItem('assignments');
-// }
-
-// function checkAll() {
-//     assignments.forEach(assignment => assignment.done = true);
-//     populateList(assignments, assignmentsList);
-//     localStorage.setItem('assignments', JSON.stringify(assignments));
-// }
-
-// function uncheckAll() {
-//     assignments.forEach(assignment => assignment.done = false);
-//     populateList(assignments, assignmentsList);
-//     localStorage.setItem('assignments', JSON.stringify(assignments));
-// }
 
 populateList(assignments, assignmentsList);
