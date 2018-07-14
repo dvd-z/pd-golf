@@ -2,3 +2,22 @@ h1 {
 	font-family: 'Lobster', cursive;
 	font-size: 85px;
 }
+
+.list-group-item {
+	margin: 10px auto;
+}
+
+.form-group {
+	margin: 0 10px;
+}
+
+.submit-container, .grade-input-container {
+	width: 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.grade-input {
+	width: 100px;
+}

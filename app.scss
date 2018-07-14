@@ -1,0 +1,9 @@
+@import "@material/textfield/mdc-text-field";
+
+.assignments,
+.weights, 
+.mark {
+  display: inline;
+  width: 300px;
+  margin: 20px auto;
+}
