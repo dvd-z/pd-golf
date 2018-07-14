@@ -4,12 +4,22 @@ document.addEventListener("DOMContentLoaded", function () {
     var assignments = JSON.parse(localStorage.getItem("assignments")) || [];
 
     addAssignments.addEventListener("click", addAssignment);
+    assignmentsList.addEventListener('click', deleteItem);
 
     function addAssignment(e) {
         const assignment = {};
         assignments.push(assignment);
         populateList(assignments, assignmentsList);
         localStorage.setItem("assignments", JSON.stringify(assignments));
+    }
+
+    function deleteItem(e) {
+        if (!e.target.matches("input#delete")) {
+            return;
+        }
+        assignments.splice(e.target.dataset.index, 1);
+        populateList(assignments, assignmentsList);
+        localStorage.setItem('assignments', JSON.stringify(assignments));
     }
 
     function populateList(assignments = [], assignmentsList) {
