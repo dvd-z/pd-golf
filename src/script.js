@@ -37,7 +37,7 @@ function deleteItem(e) {
 }
 
 function calculateMarks() {
-
+    
 }
 
 function populateList(assignments = [], assignmentsList) {
@@ -58,7 +58,9 @@ function populateList(assignments = [], assignmentsList) {
                         <label for="mark" class="bmd-label-static">Mark</label>
                     </div>
                     <button type="button" class="close" aria-label="Close">
-                        <span aria-hidden="true" id="delete-button">&times;</span>
+                        <span aria-hidden="true" id="delete-button">
+                            &times;
+                        </span>
                     </button>
                 </form>
             </li>
