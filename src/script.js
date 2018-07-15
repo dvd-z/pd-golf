@@ -37,7 +37,7 @@ function deleteItem(e) {
 }
 
 function calculateMarks() {
-    
+    alert('HA UR GEY');
 }
 
 function populateList(assignments = [], assignmentsList) {
