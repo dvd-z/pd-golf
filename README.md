@@ -1,5 +1,7 @@
 # pd-golf
 
+### Created by Jason Chu, Kevin Hua, Matthew Yuen, and David Zhou
+
 A web app that caculates the minimum mark needed in assignments to pass PD, using inputted information on assignments, weights, and grades.
 
 <figure>
